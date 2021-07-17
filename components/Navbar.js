@@ -25,7 +25,7 @@ const Navbar = () => {
   ];
   const routesLoop = routes.map((route) => {
     return (
-      <li>
+      <li key={route.path}>
         <Link href={route.path}>
           <span className={router.pathname == route.path ? styles.active : ""}>
             {route.name}
