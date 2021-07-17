@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ReactMarkdown from "react-markdown";
 import styles from "../styles/Page.module.css";
 
 const PageLayout = ({ pageContent }) => {
@@ -13,8 +14,11 @@ const PageLayout = ({ pageContent }) => {
 
         <div className={styles.container}>
           <main className={styles.main}>
-            <div className={styles.title}>{pageContent.title}</div>
-            <div className={styles.description}>{pageContent.text}</div>
+            {/* <h1 className={styles.title}>{pageContent.title}</h1> */}
+            <ReactMarkdown className={styles.description}>
+              {pageContent.text}
+            </ReactMarkdown>
+            ;
           </main>
         </div>
         <footer className={styles.footer}></footer>

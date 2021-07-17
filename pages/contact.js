@@ -7,7 +7,7 @@ const about = ({ pageContent }) => {
 
 export async function getServerSideProps(context) {
   const { data } = await axios.get(
-    "https://strapi-wlh52.ondigitalocean.app/muziekpages?title=About"
+    "https://strapi-wlh52.ondigitalocean.app/muziekpages?title=Contact"
   );
 
   return {
