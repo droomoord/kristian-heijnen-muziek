@@ -1,10 +1,10 @@
-import React from "react";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import { useRouter } from "next/router";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const router = useRouter();
+
   const routes = [
     {
       name: "Home",
@@ -27,7 +27,10 @@ const Navbar = () => {
     return (
       <li key={route.path}>
         <Link href={route.path}>
-          <span className={router.pathname == route.path ? styles.active : ""}>
+          <span
+            className={router.pathname == route.path ? styles.active : ""}
+            onClick={props.clicked}
+          >
             {route.name}
           </span>
         </Link>
