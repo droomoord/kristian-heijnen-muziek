@@ -18,7 +18,6 @@ const PageLayout = ({ pageContent }) => {
             <ReactMarkdown className={styles.description}>
               {pageContent.text}
             </ReactMarkdown>
-            ;
           </main>
         </div>
         <footer className={styles.footer}></footer>
