@@ -11,10 +11,6 @@ const Navbar = (props) => {
       path: "/",
     },
     {
-      name: "About",
-      path: "/about",
-    },
-    {
       name: "Videos",
       path: "/videos",
     },
