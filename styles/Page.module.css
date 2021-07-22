@@ -41,7 +41,8 @@
   transform: scaleX(-1);
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
+  background-attachment: fixed;
   top: 0;
   left: 0;
   background-image: url("/cover.jpeg");
@@ -68,5 +69,20 @@
   z-index: 1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  .image {
+    /* display: none; */
+    background-size: 500%;
+    background-position: 70% 50%;
+  }
+  .container {
+    display: block;
+    width: 100vw;
+    position: static;
+    padding: 0 20px;
+  }
+  .containerFilter {
+    left: 0;
+    width: 100vw;
+  }
 }

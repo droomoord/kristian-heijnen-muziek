@@ -1,8 +1,11 @@
 import Link from "next/link";
 import styles from "../styles/Navbar.module.css";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import Drawer from "../components/Drawer";
 
 const Navbar = (props) => {
+  const [drawer, setDrawer] = useState(false);
   const router = useRouter();
 
   const routes = [
@@ -21,7 +24,7 @@ const Navbar = (props) => {
   ];
   const routesLoop = routes.map((route) => {
     return (
-      <li key={route.path}>
+      <li key={route.path} onClick={() => setDrawer(false)}>
         <Link href={route.path}>
           <span
             className={router.pathname == route.path ? styles.active : ""}
@@ -36,7 +39,15 @@ const Navbar = (props) => {
 
   return (
     <nav className={styles.navbar}>
-      <ul>{routesLoop}</ul>
+      <ul className={styles.desktop}>{routesLoop}</ul>
+      <button className={styles.hamburger} onClick={() => setDrawer(!drawer)}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+      {drawer ? (
+        <Drawer close={() => setDrawer(false)}> {routesLoop} </Drawer>
+      ) : null}
     </nav>
   );
 };

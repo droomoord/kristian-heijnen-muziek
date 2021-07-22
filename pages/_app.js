@@ -10,14 +10,14 @@ function MyApp({ clicked, Component, pageProps }) {
     setSpinner(false);
   }, [pageProps]);
   return (
-    <div>
+    <>
       <Navbar clicked={() => setSpinner(true)}> </Navbar>
       <div className={styles.image} />
       {spinner ? <Spinner> </Spinner> : null}
       <div className={spinner ? styles.blur : null}>
         <Component {...pageProps} />
       </div>
-    </div>
+    </>
   );
 }
 
