@@ -26,12 +26,12 @@ const Navbar = (props) => {
     return (
       <li key={route.path} onClick={() => setDrawer(false)}>
         <Link href={route.path}>
-          <span
+          <a
             className={router.pathname == route.path ? styles.active : ""}
             onClick={props.clicked}
           >
             {route.name}
-          </span>
+          </a>
         </Link>
       </li>
     );
