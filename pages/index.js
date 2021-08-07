@@ -1,8 +1,8 @@
-import axios from "axios";
 import PageLayout from "../components/PageLayout";
 import Head from "next/head";
+import { fetchData } from "../functions/functions";
 
-export default function Home({ pageContent }) {
+export default function Page({ pageContent }) {
   return (
     <>
       <Head>
@@ -16,14 +16,13 @@ export default function Home({ pageContent }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { data } = await axios.get(
-    "https://strapi-wlh52.ondigitalocean.app/muziekpages?title=Home"
-  );
+export async function getStaticProps(context) {
+  const data = await fetchData("Home");
 
   return {
     props: {
-      pageContent: data[0],
+      pageContent: data,
     },
+    revalidate: 600,
   };
 }

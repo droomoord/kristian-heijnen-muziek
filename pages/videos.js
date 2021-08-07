@@ -1,8 +1,8 @@
 import PageLayout from "../components/PageLayout";
-import axios from "axios";
 import Head from "next/head";
+import { fetchData } from "../functions/functions";
 
-const page = ({ pageContent }) => {
+export default function Page({ pageContent }) {
   return (
     <>
       <Head>
@@ -14,18 +14,15 @@ const page = ({ pageContent }) => {
       <PageLayout pageContent={pageContent}> </PageLayout>
     </>
   );
-};
+}
 
-export async function getServerSideProps(context) {
-  const { data } = await axios.get(
-    "https://strapi-wlh52.ondigitalocean.app/muziekpages?title=Videos"
-  );
+export async function getStaticProps(context) {
+  const data = await fetchData("Videos");
 
   return {
     props: {
-      pageContent: data[0],
+      pageContent: data,
     },
+    revalidate: 600,
   };
 }
-
-export default page;
