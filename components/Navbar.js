@@ -23,12 +23,13 @@ const Navbar = (props) => {
     },
   ];
   const routesLoop = routes.map((route) => {
+    const currentRoute = router.pathname === route.path;
     return (
       <li key={route.path} onClick={() => setDrawer(false)}>
         <Link href={route.path}>
           <a
-            className={router.pathname == route.path ? styles.active : ""}
-            onClick={props.clicked}
+            className={currentRoute ? styles.active : null}
+            onClick={currentRoute ? null : props.clicked}
           >
             {route.name}
           </a>
