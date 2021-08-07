@@ -41,11 +41,13 @@ const Navbar = (props) => {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.desktop}>{routesLoop}</ul>
-      <button className={styles.hamburger} onClick={() => setDrawer(!drawer)}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
+      <div className={styles.bar}>
+        <button className={styles.hamburger} onClick={() => setDrawer(!drawer)}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
       {drawer ? (
         <Drawer close={() => setDrawer(false)}> {routesLoop} </Drawer>
       ) : null}
