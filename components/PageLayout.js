@@ -6,7 +6,8 @@ const PageLayout = ({ pageContent }) => {
   return (
     <>
       <Head>
-        <title>Kristian Heijnen - {pageContent.title}</title>
+        {/* <title>Kristian Heijnen - {pageContent.title}</title> */}
+        <title>Kristian Heijnen</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
@@ -19,13 +20,24 @@ const PageLayout = ({ pageContent }) => {
       </Head>
 
       <div className={styles.container}>
-        <div className={styles.containerFilter}></div>
+        {/* <div className={styles.containerFilter}></div>
         <main className={styles.main}>
-          {/* <h1 className={styles.title}>{pageContent.title}</h1> */}
+          <h1 className={styles.title}>{pageContent.title}</h1>
           <ReactMarkdown className={styles.description}>
             {pageContent.text}
           </ReactMarkdown>
-        </main>
+        </main> */}
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h1>Under Construction!</h1>
+        </div>
       </div>
     </>
   );

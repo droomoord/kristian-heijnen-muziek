@@ -16,13 +16,13 @@ export default function Page({ pageContent }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const data = await fetchData("Videos");
+// export async function getStaticProps(context) {
+//   const data = await fetchData("Videos");
 
-  return {
-    props: {
-      pageContent: data,
-    },
-    revalidate: 600,
-  };
-}
+//   return {
+//     props: {
+//       pageContent: data,
+//     },
+//     revalidate: 600,
+//   };
+// }
